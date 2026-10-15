@@ -1,13 +1,14 @@
 package tarea.com.init;
 
+import com.formdev.flatlaf.intellijthemes.FlatArcDarkIJTheme;
+
+import tarea.com.mvc.controllers.ControllerPrincipal;
+
 public class Main {
 
-	public Main() {
-		// TODO Auto-generated constructor stub
-	}
-
 	public static void main(String[] args) {
-		// TODO Auto-generated method stub
+		new FlatArcDarkIJTheme().setup();
+		new ControllerPrincipal().init();
 
 	}
 

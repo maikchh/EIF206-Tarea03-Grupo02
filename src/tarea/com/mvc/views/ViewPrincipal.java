@@ -14,6 +14,7 @@ import javax.swing.SwingConstants;
 import java.awt.FlowLayout;
 import javax.swing.JTextField;
 import javax.swing.JComboBox;
+import javax.swing.JScrollPane;
 
 public class ViewPrincipal extends JFrame {
 
@@ -23,9 +24,12 @@ public class ViewPrincipal extends JFrame {
 	public JTextField txtTitulo;
 	public JTextField textTemporadas;
 	public JTextField textCalificacion;
-	public JPanel panelSeries;
 	public JLabel lblCantidad;
 	public JComboBox cbGenero;
+	public JButton btnGuardar;
+	public JButton btnNuevo;
+	public JPanel panelSeries;
+	private JScrollPane scrollPane;
 
 	public ViewPrincipal() {
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
@@ -139,16 +143,19 @@ public class ViewPrincipal extends JFrame {
 		panelButtons.setBorder(new EmptyBorder(20, 0, 20, 0));
 		panel_4.add(panelButtons, BorderLayout.NORTH);
 		
-		JButton btnGuardar = new JButton("Guardar");
+		btnGuardar = new JButton("Guardar");
 		btnGuardar.setFont(new Font("Yu Gothic", Font.BOLD, 16));
 		panelButtons.add(btnGuardar);
 		
-		JButton btnNuevo = new JButton("+ Nuevo");
+		btnNuevo = new JButton("+ Nuevo");
 		btnNuevo.setFont(new Font("Yu Gothic", Font.BOLD, 16));
 		panelButtons.add(btnNuevo);
 		
+		scrollPane = new JScrollPane();
+		panel_4.add(scrollPane, BorderLayout.CENTER);
+		
 		panelSeries = new JPanel();
-		panel_4.add(panelSeries, BorderLayout.CENTER);
+		scrollPane.setViewportView(panelSeries);
 	}
 
 	
@@ -156,6 +163,7 @@ public class ViewPrincipal extends JFrame {
 		this.setVisible(true);
 		this.setLocationRelativeTo(null);
 		this.setTitle("Sistema Gestor de Series");
+		this.lblTitulo.setText("Sistema Gestor de Series");
 	}
 	
 	
